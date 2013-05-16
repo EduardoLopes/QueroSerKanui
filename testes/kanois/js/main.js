@@ -53,10 +53,21 @@ function getElement(id){
 }
 
 var btnConsole = getElement("console");
+var btnHTML = getElement("html");
+var resultHtml = getElement("result");
+var count = 0;
 
 btnConsole.addEventListener("click", function(){
-    kanois.consoleResult();
-    
+    kanois.consoleResult();    
 });
-    
+
+btnHTML.addEventListener("click", function(){
+    //works just one time
+    if(count < 100){
+        for (var i = 1; i <= 100; i++) {
+            resultHtml.innerHTML += kanois.number[i] +" <br />" ;
+            count++
+        };
+    }
+});
 
