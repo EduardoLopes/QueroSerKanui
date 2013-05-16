@@ -47,4 +47,16 @@ Kanois.prototype.consoleResult = function() {
 };
 
 var kanois = new Kanois();
-kanois.consoleResult();
+
+function getElement(id){
+    return document.getElementById(id);
+}
+
+var btnConsole = getElement("console");
+
+btnConsole.addEventListener("click", function(){
+    kanois.consoleResult();
+    
+});
+    
+
