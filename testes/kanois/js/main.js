@@ -54,6 +54,7 @@ function getElement(id){
 
 var btnConsole = getElement("console");
 var btnHTML = getElement("html");
+var btnClear = getElement("clear");
 var resultHtml = getElement("result");
 var count = 0;
 
@@ -65,9 +66,15 @@ btnHTML.addEventListener("click", function(){
     //works just one time
     if(count < 100){
         for (var i = 1; i <= 100; i++) {
-            resultHtml.innerHTML += kanois.number[i] +" <br />" ;
+            resultHtml.innerHTML += "<div class='number'> " + kanois.number[i] + " </div>" ;
             count++
         };
     }
 });
+
+btnClear.addEventListener("click", function(){
+    resultHtml.innerHTML = "";
+    count = 0;
+});
+
 
