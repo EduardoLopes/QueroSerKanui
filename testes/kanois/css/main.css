@@ -51,7 +51,6 @@ body{
     font-family: sans-serif;
     font-size: 14px;
     background-color: #ecf0f1;
-    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAF0lEQVQIW2NkYGCQBOLnQAwGjDAG8QIAPVIBBboAvtsAAAAASUVORK5CYII=);*/
     overflow-y: scroll;
 }
 
@@ -60,8 +59,10 @@ body{
     margin: 0 auto; 
 }
 
-.containerNav{
+textarea{
     width: 780px;
+    height: 580px;
+    margin-top: 5px;
 }
 
 .number{
@@ -81,7 +82,6 @@ body{
          -o-transition: all .2s ease-in-out;
             transition: all .2s ease-in-out;
 }
-
 
 .number:hover{
     background: #1abc9c;

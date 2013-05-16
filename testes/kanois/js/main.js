@@ -35,9 +35,9 @@ Kanois.prototype.setNumbers = function() {
     };
 };
 
-Kanois.prototype.getJson = function() {
-    var json = JSON.stringify(this.getNumber(), null, '\t');
-    return json.replace(/\"(\d*.\d+|[\d+])\"/,"$1");
+Kanois.prototype.getJSON = function() {
+    var json = JSON.stringify(this.number, null, '\t');
+    return json;
 };
 
 Kanois.prototype.consoleResult = function() {
@@ -55,7 +55,10 @@ function getElement(id){
 var btnConsole = getElement("console");
 var btnHTML = getElement("html");
 var btnClear = getElement("clear");
+var btnJSON = getElement("JSON");
+
 var resultHtml = getElement("result");
+
 var count = 0;
 
 btnConsole.addEventListener("click", function(){
@@ -65,6 +68,7 @@ btnConsole.addEventListener("click", function(){
 btnHTML.addEventListener("click", function(){
     //works just one time
     if(count < 100){
+        resultHtml.innerHTML = "";
         for (var i = 1; i <= 100; i++) {
             resultHtml.innerHTML += "<div class='number'> " + kanois.number[i] + " </div>" ;
             count++
@@ -74,6 +78,12 @@ btnHTML.addEventListener("click", function(){
 
 btnClear.addEventListener("click", function(){
     resultHtml.innerHTML = "";
+    count = 0;
+});
+
+btnJSON.addEventListener("click", function(){
+    resultHtml.innerHTML = "";
+    resultHtml.innerHTML = "<textarea>" + kanois.getJSON() +  "</textarea>";
     count = 0;
 });
 
